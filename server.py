@@ -2,7 +2,7 @@ from flask import Flask, request, abort
 
 app = Flask(__name__)
 
-@app.route('/',methods=['POST'])
+@app.route('/')
 def webhook():
     if request.method == 'POST':
         print(request.json)
@@ -10,7 +10,7 @@ def webhook():
     else:
         abort(400)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
         return 'success', 200
    
